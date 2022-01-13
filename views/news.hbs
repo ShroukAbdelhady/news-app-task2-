@@ -7,21 +7,19 @@
 </head>
 
 <body>
-    {{!-- <p>{{title}}</p>
-    <p>{{description}}</p>
-    <img src="{{image}}" alt="error"> --}}
-    <div class="row align-items-start">  
-          {{#each news }}
-            <div class="card d-inline-block m-3 " style="width: 18rem;">
-                <img src="{{image}}" class="card-img-top pt-2" alt=" cannot find image!">
-                <div class="card-body">
-                    <h5 class="card-title">{{title}}</h5>
-                    <p class="card-text">{{description}}</p>
-                </div>
+
+    <div class="row align-items-start">
+        {{#each response.body.articles }}
+        <div class="card d-inline-block m-3 " style="width: 18rem;">
+            <img src="{{this.urlToImage}}" class="card-img-top pt-2" alt=" cannot find image!">
+            <div class="card-body">
+                <h5 class="card-title">{{this.title}}</h5>
+                <p class="card-text">{{this.description}}</p>
             </div>
-            {{/each}}
+        </div>
+        {{/each}}
     </div>
-          
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
